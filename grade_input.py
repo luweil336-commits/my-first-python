@@ -26,9 +26,15 @@ def count_pass(x):
     return n
 
 print("平均分：", round(average(scores), 2))
-print("最高分：", highest(scores))
-print("最低分：", lowest(scores))
+
+top_name, top_score = highest(scores)
+print(f"最高分：{top_name} {top_score} 分")
+
+low_name, low_score = lowest(scores)
+print(f"最低分：{low_name} {low_score} 分")
+
 print("及格门数：", count_pass(scores.values()))
+
 print("\n排名：")
 for i, (name, score) in enumerate(rank(scores), 1):
-    print(f"{i}. {name}：{score}")
+    print(f"{i}. {name}：{score} 分")
